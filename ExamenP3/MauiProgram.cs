@@ -19,8 +19,8 @@ namespace ExamenP3
                 });
 
             builder.Services.AddHttpClient();
-            builder.Services.AddSingleton<ChuckNorrisService>();
-            builder.Services.AddSingleton<MainViewModel>();
+            builder.Services.AddSingleton<Services.ChuckNorrisService>();
+            builder.Services.AddSingleton<ViewModels.MainViewModel>();
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<JokesPage>();
             builder.Services.AddSingleton<FavoriteCharacterPage>();

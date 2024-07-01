@@ -10,7 +10,7 @@ namespace ExamenP3.Models
 {
     public class Joke
     {
-        [PrimaryKey, AutoIncrement]
+        [SQLite.PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string JokeText { get; set; }
         public string Code { get; set; }

@@ -22,6 +22,10 @@ namespace ExamenP3.ViewModels
         public ICommand AddJokeCommand { get; }
         public ICommand LoadJokesCommand { get; }
 
+        public MainViewModel()
+        {
+
+        }
         public MainViewModel(ChuckNorrisService chuckNorrisService, DatabaseService databaseService) {
         _chuckNorrisService = chuckNorrisService;
         _databaseService = databaseService;

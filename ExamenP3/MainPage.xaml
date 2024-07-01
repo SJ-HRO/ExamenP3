@@ -1,18 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ExamenP3.ViewModels"
              x:Class="ExamenP3.MainPage">
     <ContentPage.BindingContext>
-        <viewmodels:MainViewModel />
+        <local:MainViewModel />
     </ContentPage.BindingContext>
-
+    
     <StackLayout Padding="10">
         <Button Text="Cargar Chistes" Command="{BindingLoadJokesCommand}" />
         <Button Text="Agregar Chiste" Command="{BindingAddJokeCommand}" />
         <CollectionView ItemsSource="{BindingJokes}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Orientation="Horizontal"
+                    <StackLayout Orientation="Horizontal" Padding="10">
+                        <Label Text="{Binding JokeText}" />
+                        <Label Text="{Binding Code}" />
+                    </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

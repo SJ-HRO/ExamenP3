@@ -17,8 +17,8 @@ namespace ExamenP3.Services
         public async Task<string> GetRandomJokeAsync()
         {
             var response = await _httpClient.GetStringAsync("https://api.chucknorris.io/jokes/random");
-            var joke = JObject.Parse(response)["value"] - ToString();
-            return joke;
+            var joke = JObject.Parse(response)["value"] = ToString();
+            return (string)joke;
         }
     }
 }

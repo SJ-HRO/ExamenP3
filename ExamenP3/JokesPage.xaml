@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExamenP3.JokesPage"
+             Title="JokesPage">
+    <ContentPage.BindingContext>
+        <StackLayout Padding="10">
+            <CollectionView ItemsSource="{Binding Jokes}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout
+                            Orientation="Horizontal"
+                            Padding="10">
+                            <Label Text="{Binding JokeText}" />
+                            <Label Text="{Binding Code}" />
+                            <Button Text="Editar" Command="{Binding EditJokeCommand}" CommandParameter="{Binding .}"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.BindingContext>
+</ContentPage>

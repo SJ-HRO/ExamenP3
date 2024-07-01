@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExamenP3.Models;
 using SQLite;
 
 namespace ExamenP3.Services
