@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.
+using Microsoft.Extensions.Http;
+using SQLite;
 
 namespace ExamenP3
 {
@@ -17,10 +18,12 @@ namespace ExamenP3
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-#if DEBUG
-    		builder.Logging.AddDebug();
-#endif
-
+            builder.Services.AddHttpClient();
+            builder.Services.AddSingleton<ChuckNorrisService>();
+            builder.Services.AddSingleton<MainViewModel>();
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<JokesPage>();
+            builder.Services.AddSingleton<FavoriteCharacterPage>();
             return builder.Build();
         }
     }
